@@ -14,8 +14,12 @@ class Patient(models.Model):
     name = models.CharField(max_length=50)
     pid = models.CharField(max_length=9)
     contacts = models.CharField(max_length=255)
-    medical_history = models.TextField()
+    contacts2 = models.CharField(max_length=255)
+    medical1 = models.TextField()
+    medical2 = models.TextField()
     status = models.BooleanField() #get cured or not
+    lat = models.FloatField()
+    lon = models.FloatField()
 
     def __str__(self):
         return self.name

@@ -25,6 +25,18 @@ urlpatterns = [
     url(r'^paramedic/instruction', views.paramedic_instruction),
     url(r'^paramedic/report', views.report),
     url(r'^paramedic/map', views.paramedic_map),
-    url(r'^paramedic/hospital', views.paramedic_hospital),
+    url(r'^paramedic/hospital_info', views.paramedic_hospital),
+    url(r'^paramedic/patient/(?P<id>\d+)/$', views.patient_detail),
+    url(r'^paramedic/patient/search', views.search_patient),
+
+    url(r'^paramedic/medical/drug', views.medical_drug),
+    url(r'^paramedic/medical/refer', views.medical_refer),
+    url(r'^paramedic/medical/protocal', views.medical_prot),
+    url(r'^paramedic/medical/tool', views.medical_tool),
+
+    url(r'^paramedic/medical/search', views.search_medical),
+    url(r'^paramedic/medical/(?P<id>\d+)/$', views.medical_detail),
+
+    url(r'^paramedic/hospital/search', views.search_hospital),
 ]
 

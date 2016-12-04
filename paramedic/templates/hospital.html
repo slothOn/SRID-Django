@@ -18,60 +18,59 @@
 {% include 'nav.html' %}
 <div class="container">
     <p style="height: 5px"></p>
-    <form class="form-inline" style="margin: 20px" method="get">
+    <div class="form-inline" style="margin: 20px">
         <div class="input-group" style="width: 100%">
-            <input type="text" class="form-control" name="searchkeywords" placeholder="keyword">
+            <input type="text" class="form-control" name="keyword" placeholder="keyword" id="keyword">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
+                    <button class="btn btn-default" type="submit" onclick="search_hospital()">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
         </div>
-    </form>
+    </div>
     <form class="form-horizontal">
         <div class="checkbox">
             <label>
-                <input type="checkbox">X-ray
+                <input type="checkbox" name="x_ray">X-ray
             </label>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox">Pacemaker
+                <input type="checkbox" name="pace_maker">Pacemaker
             </label>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox">No Wait
+                <input type="checkbox" name="wait">No Wait
             </label>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox">Ranked by equipment
+                <input type="checkbox" name="rank1">Ranked by equipment
             </label>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox">Ranked by size
+                <input type="checkbox" name="rank2">Ranked by size
             </label>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox">Ranked by distance
+                <input type="checkbox" name="rank3">Ranked by distance
             </label>
         </div>
         <p></p>
     </form>
     <p style="height: 30px"></p>
-    <ul class="list-group">
-        <li class="list-group-item"><span class="badge">map</span>免费域名注册</li>
-        <li class="list-group-item"><span class="badge">map</span>免费 Window 空间托管</li>
-        <li class="list-group-item"><span class="badge">map</span>图像的数量</li>
+     <ul class="list-group" id="itemslist">
+        <li class="list-group-item noitem">No result now</li>
+{#        <li class="list-group-item"><span class="badge">map</span>aa</li> #}
     </ul>
 </div>
 
 
 
-
+<script src="/static/js/hospital.js"></script>
 <script src="/static/bower_components/jquery/jquery.min.js"></script>
 <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

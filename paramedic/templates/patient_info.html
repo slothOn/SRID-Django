@@ -13,23 +13,19 @@
 
     {% include 'nav.html' %}
     <div class="container">
-        <form class="form-inline" style="margin: 20px" action="index.php" method="get">
+        <div class="form-inline" style="margin: 20px" >
             <div class="input-group" style="width: 100%">
-                <input type="text" class="form-control" name="searchkeywords">
+                <input type="text" class="form-control" name="name" placeholder="use name or id to search" id="pname">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
+                    <button class="btn btn-default" onclick="search()">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
             </div>
-        </form>
+        </div>
 
-        <ul class="list-group" style="max-height: 300px">
-            <li class="list-group-item">免费域名注册</li>
-            <li class="list-group-item">免费 Window 空间托管</li>
-            <li class="list-group-item">图像的数量</li>
-            <li class="list-group-item">24*7 支持</li>
-            <li class="list-group-item">每年更新成本</li>
+        <ul class="list-group" style="max-height: 300px" id="patientlist">
+            <li class="list-group-item nopatient">No result now</li>
         </ul>
 
         <p style="height: 80px"></p>
@@ -42,8 +38,11 @@
                 </label>
             </button>
         </center>
+
         <script src="/static/bower_components/jquery/jquery.min.js"></script>
         <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/static/js/patient.js"></script>
+
     </div>
 
 
