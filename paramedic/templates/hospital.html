@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hospital</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/styles/paramedic.css" rel="stylesheet">
+    <style>
+        .checkbox {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+{% include 'nav.html' %}
+<div class="container">
+    <p style="height: 5px"></p>
+    <form class="form-inline" style="margin: 20px" method="get">
+        <div class="input-group" style="width: 100%">
+            <input type="text" class="form-control" name="searchkeywords" placeholder="keyword">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+        </div>
+    </form>
+    <form class="form-horizontal">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">X-ray
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">Pacemaker
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">No Wait
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">Ranked by equipment
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">Ranked by size
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">Ranked by distance
+            </label>
+        </div>
+        <p></p>
+    </form>
+    <p style="height: 30px"></p>
+    <ul class="list-group">
+        <li class="list-group-item"><span class="badge">map</span>免费域名注册</li>
+        <li class="list-group-item"><span class="badge">map</span>免费 Window 空间托管</li>
+        <li class="list-group-item"><span class="badge">map</span>图像的数量</li>
+    </ul>
+</div>
+
+
+
+
+<script src="/static/bower_components/jquery/jquery.min.js"></script>
+<script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

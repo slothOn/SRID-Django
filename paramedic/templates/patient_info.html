@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PatientInfo</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/styles/paramedic.css" rel="stylesheet">
+</head>
+<body>
+
+    {% include 'nav.html' %}
+    <div class="container">
+        <form class="form-inline" style="margin: 20px" action="index.php" method="get">
+            <div class="input-group" style="width: 100%">
+                <input type="text" class="form-control" name="searchkeywords">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+        <ul class="list-group" style="max-height: 300px">
+            <li class="list-group-item">免费域名注册</li>
+            <li class="list-group-item">免费 Window 空间托管</li>
+            <li class="list-group-item">图像的数量</li>
+            <li class="list-group-item">24*7 支持</li>
+            <li class="list-group-item">每年更新成本</li>
+        </ul>
+
+        <p style="height: 80px"></p>
+        <div class="split_line">Or use face photo to find</div>
+        <center>
+            <button class="btn btn-primary btn-lg" style="padding-left: 25px; padding-right: 25px">
+                <label for="image_face">
+                    <i class="fa fa-camera"></i>
+                    <input id="image_face" type="file" onchange="sendImg(this)"/>
+                </label>
+            </button>
+        </center>
+        <script src="/static/bower_components/jquery/jquery.min.js"></script>
+        <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    </div>
+
+
+</body>
+</html>
