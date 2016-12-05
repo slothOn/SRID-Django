@@ -29,28 +29,36 @@
         navigator.geolocation.getCurrentPosition(setLocation);
       }
     }
+
     function setLocation(position) {
         window.lat = position.coords.latitude;
         window.lon = position.coords.longitude;
-
+        var pt = {lat: window.lat, lng: window.lon};
+        window.map.setCenter(pt);
+        var marker = new google.maps.Marker({
+            position: pt,
+            map: map,
+            title: ''
+        });
+        getTargetLocation();
+        NavigationTool();
     }
 
     function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+        var myLatLng = {lat: 31.410447, lng: -122.059742};
 
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: myLatLng
         });
 
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-        });
+        window.map = map;
+        getLocation();
     }
-
 </script>
+<script src="/static/bower_components/jquery/jquery.min.js"></script>
+<script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/static/js/map.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH2CoaCuQslEXMjLvY9F3Q9aGqV9DlbX8&callback=initMap"></script>
 </body>
