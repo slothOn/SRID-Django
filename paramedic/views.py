@@ -17,6 +17,9 @@ def detail(request, my_args):
     return HttpResponse(str)
 '''
 
+def homepage(request):
+    return render(request, 'home.html')
+
 def paramedic_home(request):
     return render(request, 'paramedic_home.html', {'title': 'menu'})
 

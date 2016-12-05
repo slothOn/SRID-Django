@@ -41,6 +41,7 @@ urlpatterns = [
     url(r'^paramedic/hospital/map', views.paramedic_map),
 
     url(r'^paramedic/patient/location', views.patient_location),
-    url(r'^paramedic/hospital/location', views.hospital_location)
+    url(r'^paramedic/hospital/location', views.hospital_location),
+    url(r'^$', views.homepage),
 ]
 
