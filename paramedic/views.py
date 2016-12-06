@@ -17,6 +17,9 @@ def detail(request, my_args):
     return HttpResponse(str)
 '''
 
+def homepage(request):
+    return render(request, 'home.html')
+
 def paramedic_home(request):
     return render(request, 'paramedic_home.html', {'title': 'menu'})
 
@@ -128,4 +131,37 @@ def search_hospital(request):
         'lat':37.461332,
         'lon':-122.158353
     }]
+    return HttpResponse(json.dumps(data, ensure_ascii=False))
+
+def patient_location(request):
+    patients = [{
+        'name':'Paul Smith',
+        'pid':'123456789',
+        'lat':37.427588,
+        'lon':-122.171504
+    }]
+    return HttpResponse(json.dumps(patients, ensure_ascii=False))
+
+def hospital_location(request):
+    hid = int(request.GET.get('id'))
+    data = None
+    hospitals = [{
+        'id':1,
+        'name':'EI Camino Hospital',
+        'x-ray': True,
+        'lat':37.368115,
+        'lon':-122.079750
+    }, {
+        'id':2,
+        'name':'Palo Alto Hospital',
+        'x-ray': True,
+        'lat':37.461332,
+        'lon':-122.158353
+    }]
+
+    if hid == 1:
+        data = hospitals[0]
+    else:
+        data = hospitals[1]
+
     return HttpResponse(json.dumps(data, ensure_ascii=False))

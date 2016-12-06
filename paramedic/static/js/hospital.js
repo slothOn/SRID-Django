@@ -9,7 +9,7 @@ function search_hospital() {
             for (var i = 0; i < data.length; i++) {
                 $('#itemslist').append(
                     "<li class='list-group-item noitem'>"
-                    + "<span class='badge' onclick=enter_map(data[i].id)>map</span>" + data[i].name + "</li>"
+                    + "<span class='badge' onclick=enter_map(" + data[i].id + ")>map</span>" + data[i].name + "</li>"
                 );
             }
         } else {
@@ -19,5 +19,5 @@ function search_hospital() {
 }
 
 function enter_map(id) {
-
+    window.location.href = '/paramedic/hospital/map?type=2&id=' + id;
 }

@@ -38,5 +38,10 @@ urlpatterns = [
     url(r'^paramedic/medical/(?P<id>\d+)/$', views.medical_detail),
 
     url(r'^paramedic/hospital/search', views.search_hospital),
+    url(r'^paramedic/hospital/map', views.paramedic_map),
+
+    url(r'^paramedic/patient/location', views.patient_location),
+    url(r'^paramedic/hospital/location', views.hospital_location),
+    url(r'^$', views.homepage),
 ]
 
